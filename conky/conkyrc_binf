@@ -11,7 +11,7 @@
 #==============================================================================
 
 background yes
-update_interval 30
+update_interval 10
 
 double_buffer yes
 no_buffers yes
@@ -21,7 +21,6 @@ gap_x 20
 gap_y 60
 minimum_size 320 600
 maximum_width 440
-maximum_height 600
 own_window yes
 own_window_type override
 own_window_transparent yes
@@ -51,22 +50,22 @@ TEXT
 ## -- WRZ --
 ${font Ubuntu:size=13,weight:bold}${color1}WRZ ${color4}${hr 2} 
 ${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}grid
-${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote 89}
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 6 mon-stat --exec "ssh 89" --mode squeue-short }
 ${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}cluster
-${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote wbbi102}
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 6 mon-stat --exec "ssh wbbi102" --mode squeue-short }
 
 ## -- BMM --
 ${font Ubuntu:size=13,weight:bold}${color1}BMM ${color4}${hr 2}
 ${font Ubuntu:size=12,weight:bold}${color3}yar
-${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote yar --mode top}
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 6 mon-stat --exec "ssh yar" --mode top-short}
 ${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}riker
-${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote riker --mode top}
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 6 mon-stat --exec "ssh riker" --mode top-short}
 ${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}picard
-${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote picard --mode top}
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 6 mon-stat --exec "ssh picard" --mode top-short}
 
 ## -- LRZ --
 ${font Ubuntu:size=13,weight:bold}${color1}LRZ ${color4}${hr 2}
 ${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}serial-long
-${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote lrz -- --clusters serial --partition serial_long}
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 6 mon-stat --exec "ssh lrz" --mode squeue-short -- --clusters serial --partition serial_long}
 ${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}mammoth
-${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote mammoth --mode top}
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 6 mon-stat --exec "ssh mammoth" --mode top-short}
