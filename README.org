@@ -1,0 +1,31 @@
+#+LATEX: \pagebreak
+
+** Installation
+
+#+BEGIN_EXAMPLE
+  git clone https://github.com/thackl/mon-scripts.git
+#+END_EXAMPLE
+
+** Dependencies
+
+- [[http://conky.sourceforge.net/][Conky - A light-weight system monitor]]
+
+** Usage
+#+BEGIN_EXAMPLE
+  mon-scripts/bin/mon-conky [CONKYRC]
+#+END_EXAMPLE
+
+** Output
+file:img/mon-conky-binf.png
+
+#+TITLE: mon-scripts manual
+#+AUTHOR: Thomas Hackl
+#+EMAIL: thomas.hackl@uni-wuerzburg.de
+#+LANGUAGE: en
+#+OPTIONS: ^:nil date:nil H:2 todo:nil
+#+LaTeX_CLASS: scrartcl
+#+LaTeX_CLASS_OPTIONS: [a4paper,12pt,headings=small]
+#+LaTeX_HEADER: \setlength{\parindent}{0pt}
+#+LaTeX_HEADER: \setlength{\parskip}{1.5ex}
+#+LATEX_HEADER: \renewcommand{\familydefault}{\sfdefault}
+
