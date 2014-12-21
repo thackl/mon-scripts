@@ -1,0 +1,72 @@
+#==============================================================================
+#                               conkyrc_binf
+#
+#  Date    : 20/12/2014
+#  author  : dumps
+#  version : v0.1
+#  license : Distributed under the terms of GNU GPL version 2 or later
+#  This version is a modification of conkyrc_lunatico found at
+#   http://gnome-look.org/content/show.php?content=142884
+#
+#==============================================================================
+
+background yes
+update_interval 30
+
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+
+gap_x 20
+gap_y 60
+minimum_size 320 600
+maximum_width 440
+maximum_height 600
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+border_inner_margin 0
+border_outer_margin 0
+alignment tr
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+override_utf8_locale yes
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.5
+uppercase no
+
+default_color 000000 #FFFFFF
+color1 111111 #DDDDDD
+color2 444444 #AAAAAA
+color3 DDDDDD
+color4 990000 #FF5A29
+
+TEXT
+## -- WRZ --
+${font Ubuntu:size=13,weight:bold}${color1}WRZ ${color4}${hr 2} 
+${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}grid
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote 89}
+${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}cluster
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote wbbi102}
+
+## -- BMM --
+${font Ubuntu:size=13,weight:bold}${color1}BMM ${color4}${hr 2}
+${font Ubuntu:size=12,weight:bold}${color3}yar
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote yar --mode top}
+${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}riker
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote riker --mode top}
+${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}picard
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote picard --mode top}
+
+## -- LRZ --
+${font Ubuntu:size=13,weight:bold}${color1}LRZ ${color4}${hr 2}
+${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}serial-long
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote lrz -- --clusters serial --partition serial_long}
+${voffset 3}${font Ubuntu:size=12,weight:bold}${color3}mammoth
+${voffset -16}${font Monospace:size=11,weight:bold}${color2}${texeci 600 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote mammoth --mode top}

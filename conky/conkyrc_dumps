@@ -1,0 +1,97 @@
+#==============================================================================
+#                               conkyrc_dumps
+#
+#  Date    : 20/12/2014
+#  author  : dumps
+#  version : v0.1
+#  license : Distributed under the terms of GNU GPL version 2 or later
+#  This version is a modification of conkyrc_lunatico found at
+#   http://gnome-look.org/content/show.php?content=142884
+#
+#==============================================================================
+
+background yes
+update_interval 10
+
+cpu_avg_samples 2
+net_avg_samples 2
+temperature_unit celsius
+
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+
+gap_x 10
+gap_y 100
+minimum_size 320 800
+maximum_width 440
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+border_inner_margin 0
+border_outer_margin 0
+alignment tr
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+override_utf8_locale yes
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.5
+uppercase no
+
+default_color 000000 #FFFFFF
+color1 111111 #DDDDDD
+color2 444444 #AAAAAA
+color3 888888
+color4 990000 #FF5A29
+
+#lua_load ~/.conky/conky_lunatico.lua
+#lua_draw_hook_post main
+
+
+TEXT
+${offset 0}${font Ubuntu:size=12,weight:normal}${color1}$nodename ${alignr}$uptime
+${voffset -5}${color4}${hr 2}
+${offset 0}${font Ubuntu:size=12,weight:normal}${color1}$sysname $kernel
+${offset 0}${color2}eth0:${alignr}${addr eth0}
+${offset 0}${color2}wlan0:${alignr}${addr wlan0}
+## CPU
+${voffset 0}
+#${offset 65}${cpugraph 40,110 666666 666666}${voffset -15}
+${offset 0}${font Ubuntu:size=12,weight:bold}${color}CPU
+${offset 25}${font Ubuntu:size=12,weight:normal}${color4}${top name 1}${alignr}${top cpu 1}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color1}${top name 2}${alignr}${top cpu 2}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color2}${top name 3}${alignr}${top cpu 3}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color3}${top name 4}${alignr}${top cpu 4}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color3}${top name 5}${alignr}${top cpu 5}%
+## RAM
+${voffset 0}
+${offset 0}${font Ubuntu:size=12,weight:bold}${color}RAM
+${offset 25}${font Ubuntu:size=12,weight:normal}${color4}${top_mem name 1}${alignr}${top_mem mem 1}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color1}${top_mem name 2}${alignr}${top_mem mem 2}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color2}${top_mem name 3}${alignr}${top_mem mem 3}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color3}${top_mem name 4}${alignr}${top_mem mem 4}%
+${offset 25}${font Ubuntu:size=12,weight:normal}${color3}${top_mem name 4}${alignr}${top_mem mem 5}%
+## HDD
+#
+#${voffset 0}
+#${offset 0}${diskiograph 20,110 666666 666666}${voffset -15}
+#${offset 0}${font Ubuntu:size=12,weight:bold}${color}HDD
+#${offset 25}${diskiograph 20,150 666666 666666}${voffset -30}
+#${offset 25}${font Ubuntu:size=12,weight:normal}${color}Used:${alignr}${fs_used /}
+## ETH
+#
+#${voffset 0}
+#${offset 0}${font Ubuntu:size=12,weight:bold}${color}ETHERNET             WIRELESS
+#${offset 0}${color}Up: $color2${upspeed eth0} ${alignr}${color}Down: $color2${downspeed wlan0}
+#${offset 0}${color}Down: $color2${downspeed eth0} ${alignr}${color}Down: $color2${downspeed wlan0}
+${color4}${hr 2}
+## GRID
+#
+${offset 0}${font Ubuntu:size=12,weight:bold}${color}GRID
+${font Monospace:size=10,weight:bold}${color2}${texeci 9 "/home/thackl/PhD/projects/it-and-coding/code/mon-scripts/bin/mon-squeue.sh" --remote 89}
