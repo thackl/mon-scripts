@@ -15,8 +15,8 @@
   mon-scripts/bin/mon-conky [CONKYRC]
 #+END_EXAMPLE
 
-** Output
-file:img/mon-conky-binf.png
+** Screenshots
+[[img/mon-conky-binf.png]]
 
 #+TITLE: mon-scripts manual
 #+AUTHOR: Thomas Hackl
