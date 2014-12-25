@@ -1,21 +1,29 @@
 #+LATEX: \pagebreak
 
 ** Installation
-
 #+BEGIN_EXAMPLE
   git clone https://github.com/thackl/mon-scripts.git
 #+END_EXAMPLE
 
 ** Dependencies
-
 - [[http://conky.sourceforge.net/][Conky - A light-weight system monitor]]
+#+BEGIN_SRC sh
+  sudo apt-get install conky   # required for displaying stuff on desktop
+#+END_SRC
 
 ** Usage
 #+BEGIN_EXAMPLE
-  mon-scripts/bin/mon-conky [CONKYRC]
+  # local, top
+  mon-stat --mode top-short
+  # remote, queue
+  mon-stat --exec "ssh 89" --mode squeue-short
+  # remote, queue with pass-through params
+  mon-stat --exec "ssh lrz" --mode squeue-long -- --clusters serial --partition serial_long
+
+  # display stat summery on desktop
+  mon-scripts/bin/mon-conky mon-scripts/bin/conkyrc_binf
 #+END_EXAMPLE
 
-** Screenshots
 [[img/mon-conky-binf.png]]
 
 #+TITLE: mon-scripts manual
