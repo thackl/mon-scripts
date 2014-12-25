@@ -18,10 +18,11 @@
   # remote, queue
   mon-stat --exec "ssh 89" --mode squeue-short
   # remote, queue with pass-through params
-  mon-stat --exec "ssh lrz" --mode squeue-long -- --clusters serial --partition serial_long
+  mon-stat --exec "ssh lrz" --mode squeue-long -- \
+   --clusters serial --partition serial_long
 
   # display stat summery on desktop
-  mon-scripts/bin/mon-conky mon-scripts/bin/conkyrc_binf
+  mon-conky mon-scripts/conky/conkyrc_binf
 #+END_EXAMPLE
 
 [[img/mon-conky-binf.png]]
