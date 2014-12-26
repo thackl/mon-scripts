@@ -26,6 +26,8 @@
 
   # autostart desktop summary (Ubuntu)
   cp /path/to/mon-stat/conky/mon-conky.desktop ~/.config/autostart/mon-conky.desktop
+  emacs ~/.config/autostart/mon-conky.desktop
+  # -> set /path/to/mon-scripts/conky/conkyrc_binf
 #+END_EXAMPLE
 
 Example screenshot of mon-conky running in desktop background. 
