@@ -22,9 +22,15 @@
    --clusters serial --partition serial_long
 
   # display stat summery on desktop
-  mon-conky mon-scripts/conky/conkyrc_binf
+  mon-conky /path/to/mon-scripts/conky/conkyrc_binf
+
+  # autostart desktop summary (Ubuntu)
+  cp /path/to/mon-stat/conky/mon-conky.desktop ~/.config/autostart/mon-conky.desktop
 #+END_EXAMPLE
 
+Example screenshot of mon-conky running in desktop background. 
+#+CAPTION: mon-conky on desktop
+#+ATTR_HTML: :align right
 [[img/mon-conky-binf.png]]
 
 #+TITLE: mon-scripts manual
